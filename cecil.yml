@@ -1,11 +1,15 @@
-title: 'Sac infini'
-baseline: ''
+title: Sac infini
+baseline: Des objets, encore et encore
 baseurl: 'https://domain.tld/'
-description: 'Website created with Cecil.'
+description: Le sac infini d'objets pour Jean Claude.
 author:
   name: Cecil
   url: 'https://cecil.app/'
 image: cecil-card.png
+language: fr
+languages:
+  - code: fr
+    locale: fr
 theme:
   - pwa
 serviceworker:
