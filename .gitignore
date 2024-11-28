@@ -1,3 +1,5 @@
 .cecil/
 .cache/
+themes/
+vendor/
 _site

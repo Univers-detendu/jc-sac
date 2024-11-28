@@ -1,1 +1,11 @@
 {% extends "_default/page.html.twig" %}
+
+{% block head %}
+{{ parent() }}
+<link rel="manifest" href="{{ url('manifest') }}">
+{% endblock %}
+
+{% block footer %}
+{{ parent() }}
+{{ include('partials/regsw.js.twig', {site: site}, with_context = false) }}
+{% endblock %}

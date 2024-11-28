@@ -1,0 +1,10 @@
+{
+    "require": {
+        "cecil/theme-pwa": "^2.9"
+    },
+    "config": {
+        "allow-plugins": {
+            "cecil/theme-installer": true
+        }
+    }
+}
