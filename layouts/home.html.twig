@@ -1,0 +1,50 @@
+{% extends "page.html.twig" %}
+
+{% block content %}
+      <style>
+        blockquote {
+          height: 120px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          /*width: 100%;*/
+          margin: 1.5em 10px;
+          padding: 0.5em 10px;
+        }
+        blockquote p {
+          display: inline;
+        }
+        .button-container {
+          text-align: center;
+        }
+      </style>
+      
+      <blockquote>
+        <p id="description">Cliquer sur le bouton pour prendre un objet</p>
+      </blockquote>
+      <div class="button-container">  
+        <button id="button">Piocher</button>
+      </div>
+
+      <script>
+        const items = [
+          {%- for item in site.data.sac ~%}
+          "{{ item.Description|e }}"{% if not loop.last %}, {% endif %}
+          {%- endfor ~%}
+        ];
+        
+        function getRandomItem(items) {
+          const random = Math.floor(Math.random() * items.length);
+          
+          console.log(random, items[random]);
+
+          return items[random];
+        }
+
+        const button = document.querySelector('#button');
+        const description = document.querySelector('#description');
+        button.addEventListener('click', (event) => {
+            description.innerHTML = getRandomItem(items);
+        });
+      </script>
+{% endblock %}
