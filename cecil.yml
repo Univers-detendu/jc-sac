@@ -52,6 +52,11 @@ assets:
       enabled: true
     formats: [webp]
 pages:
+  default:
+    sitemap:
+      published: false
+    xsl/atom:
+      published: false
   body:
     images:
       resize:
@@ -66,6 +71,13 @@ pages:
         enabled: true
       external:
         blank: true
+output:
+  pagetypeformats:
+    page: html
+    homepage: html
+    section: html
+    vocabulary: html
+    term: html
 metatags:
   jsonld:
     enabled: true
