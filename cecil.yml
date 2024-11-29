@@ -1,16 +1,72 @@
 title: Sac infini
 baseline: Des objets, encore et encore
-baseurl: 'https://domain.tld/'
+baseurl:
 description: Le sac infini d'objets pour Jean Claude.
 author:
-  name: Cecil
-  url: 'https://cecil.app/'
-image: cecil-card.png
+  name: Les éditions Univers Détendu
+  url: https://www.linkedin.com/company/univers-detendu/
+image: images/open-graph.jpg
+social:
+  facebook:
+    url: https://www.facebook.com/jeanclaude.aventures
+  instagram:
+    url: https://www.instagram.com/jeanclaude.aventures
+  tiktok:
+    url: https://www.tiktok.com/@jeanclaude.aventures
+  youtube:
+    url: https://www.youtube.com/@jeanclaude.aventures
+  twitch:
+    url: https://www.twitch.tv/jeanclaudeaventures
+  ulule:
+    url: https://fr.ulule.com/les-aventures-de-jean-claude
 language: fr
 languages:
   - code: fr
-    locale: fr
+    locale: fr_FR
 theme:
+  - fontawesome
   - pwa
+  - netlify
 serviceworker:
-  enabled: true
+  enabled: false
+
+assets:
+  images:
+    optimize:
+      enabled: true
+    quality: 75
+    responsive:
+      widths: [480, 640, 768, 1024]
+      sizes:
+        default: '100vw'
+      enabled: true
+    formats: [webp]
+pages:
+  body:
+    images:
+      resize:
+        enabled: true
+      responsive:
+        enabled: true
+      caption:
+        enabled: true
+      formats: [webp]
+    links:
+      embed:
+        enabled: true
+      external:
+        blank: true
+metatags:
+  jsonld:
+    enabled: true
+
+netlify:
+  redirects:
+    - from: https://jeanclaude-sac.netlify.app/*
+      to: https://jeanclaude.com/sac/:splat
+      status: 301
+      force: true
+    - from: https://jeanclaude.com/sac/*
+      to: https://sac.jeanclaude.com/:splat
+      status: 301
+      force: true
