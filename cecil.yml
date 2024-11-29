@@ -33,10 +33,10 @@ manifest:
   theme_color: '#0081FF'
   icons:
     - icon-192x192.png
-    - icon-250x250.png
+    - icon-256x256.png
     - src: icon-192x192-maskable.png
       purpose: maskable
-    - src: icon-250x250-maskable.png
+    - src: icon-256x256-maskable.png
       purpose: maskable
 serviceworker:
   enabled: true
