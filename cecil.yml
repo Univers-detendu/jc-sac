@@ -39,6 +39,9 @@ manifest:
       purpose: maskable
 serviceworker:
   enabled: true
+  update:
+    snackbar:
+      enabled: true
 
 assets:
   images:
