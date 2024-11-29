@@ -28,7 +28,7 @@ theme:
   - pwa
   - netlify
 serviceworker:
-  enabled: false
+  enabled: true
 
 assets:
   images:
