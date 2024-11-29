@@ -4,8 +4,59 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2667de2d728ed3ad0289a959f7c13e93",
+    "content-hash": "039b498f877a4603239c00a3f6bfcfd0",
     "packages": [
+        {
+            "name": "cecil/theme-fontawesome",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Cecilapp/theme-fontawesome.git",
+                "reference": "fff848216b0266911ef1c53c975bced2f49e3c73"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Cecilapp/theme-fontawesome/zipball/fff848216b0266911ef1c53c975bced2f49e3c73",
+                "reference": "fff848216b0266911ef1c53c975bced2f49e3c73",
+                "shasum": ""
+            },
+            "require": {
+                "cecil/theme-installer": "^1.4|^2.0"
+            },
+            "type": "cecil-theme",
+            "extra": {
+                "name": "fontawesome",
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Cecil component theme Font Awesome",
+            "keywords": [
+                "cecil",
+                "font",
+                "icon",
+                "theme"
+            ],
+            "support": {
+                "issues": "https://github.com/Cecilapp/theme-fontawesome/issues",
+                "source": "https://github.com/Cecilapp/theme-fontawesome/tree/1.2.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ArnaudLigny",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/cecil",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2024-11-24T00:30:40+00:00"
+        },
         {
             "name": "cecil/theme-installer",
             "version": "1.4.5",
@@ -77,6 +128,56 @@
             "time": "2022-01-06T10:54:26+00:00"
         },
         {
+            "name": "cecil/theme-netlify",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Cecilapp/theme-netlify.git",
+                "reference": "c74e2c8f4dd07f4d132d14a95a95eedf35ff67fa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Cecilapp/theme-netlify/zipball/c74e2c8f4dd07f4d132d14a95a95eedf35ff67fa",
+                "reference": "c74e2c8f4dd07f4d132d14a95a95eedf35ff67fa",
+                "shasum": ""
+            },
+            "require": {
+                "cecil/theme-installer": "^1.4|^2.0"
+            },
+            "type": "cecil-theme",
+            "extra": {
+                "name": "netlify",
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Cecil component theme Netlify",
+            "keywords": [
+                "cecil",
+                "netlify",
+                "theme"
+            ],
+            "support": {
+                "issues": "https://github.com/Cecilapp/theme-netlify/issues",
+                "source": "https://github.com/Cecilapp/theme-netlify/tree/2.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ArnaudLigny",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/cecil",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2024-11-26T01:37:24+00:00"
+        },
+        {
             "name": "cecil/theme-pwa",
             "version": "2.9.1",
             "source": {
@@ -130,10 +231,10 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
+    "platform": {},
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
