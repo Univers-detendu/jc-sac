@@ -1,29 +1,22 @@
 {% extends "page.html.twig" %}
 
-{%- block content ~%}
-      <style>
-        blockquote {
-          height: 120px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          /*width: 100%;*/
-          margin: 1.5em 10px;
-          padding: 0.5em 10px;
-        }
-        blockquote p {
-          display: inline;
-        }
-        .button-container {
-          text-align: center;
-        }
-      </style>
-      <blockquote>
-        <p id="description">Cliquer sur le bouton pour prendre un objet</p>
-      </blockquote>
-      <div class="button-container">  
-        <button id="button">Piocher</button>
+{%- block main ~%}
+      {#- description ~#}
+      <div class="p-8 rounded-3xl shadow-md mt-[-80px] bg-white">
+        <blockquote class="h-48">
+          <p id="description" class="text-2xl font-bold">Cliquer sur le bouton pour prendre un objet</p>
+        </blockquote>
       </div>
+      {#- button ~#}
+      <div class="flex mt-10 pb-10 text-wrap justify-center">
+        {%- import 'macros/fontawesome.twig' as fontawesome ~%}
+        <button id="button" class="flex items-center justify-center px-10 py-4 rounded-full bg-secondary text-white no-underline transition hover:brightness-125 duration-300">
+          <span>{{ fontawesome.icon('arrows-rotate', 'solid', 'xl') }}</span>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <span>Fouiller le sac</span>
+        </button>
+      </div>
+      {#- scripts ~#}
       <script>
         const items = [
           {%- for item in site.data.sac ~%}
