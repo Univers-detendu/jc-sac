@@ -41,6 +41,18 @@ manifest:
     - screenshots/mobile.png
 serviceworker:
   enabled: true
+  install:
+    precache:
+      assets:
+        - favicon.png
+        - icon-192x192.png
+        - icon-256x256.png
+        - icon-192x192-maskable.png
+        - icon-256x256-maskable.png
+        - images/logo.png
+        - images/logo.svg
+        - images/sac-nuit.svg
+        - images/sac.svg
   update:
     snackbar:
       enabled: true
