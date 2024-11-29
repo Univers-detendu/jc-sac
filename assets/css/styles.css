@@ -822,6 +822,28 @@ main img {
   }
 }
 
+.relative {
+  position: relative;
+}
+
+.-z-10 {
+  z-index: -10;
+}
+
+.-z-20 {
+  z-index: -20;
+}
+
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.mx-8 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -831,8 +853,12 @@ main img {
   margin-top: 2.5rem;
 }
 
-.mt-5 {
-  margin-top: 1.25rem;
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-\[-20px\] {
+  margin-top: -20px;
 }
 
 .block {
@@ -875,8 +901,10 @@ main img {
   justify-content: center;
 }
 
-.scroll-smooth {
-  scroll-behavior: smooth;
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .text-wrap {
@@ -889,6 +917,16 @@ main img {
 
 .rounded-full {
   border-radius: 9999px;
+}
+
+.bg-\[\#9F9187\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(159 145 135 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#CEC9C5\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(206 201 197 / var(--tw-bg-opacity, 1));
 }
 
 .bg-primary {
@@ -906,13 +944,17 @@ main img {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
+.p-4 {
+  padding: 1rem;
+}
+
 .p-8 {
   padding: 2rem;
 }
 
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+.px-14 {
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
 }
 
 .px-5 {
