@@ -38,7 +38,8 @@ manifest:
     - src: icon-256x256-maskable.png
       purpose: maskable
   screenshots:
-    - screenshots/mobile.png
+    - screenshots/mobile-1.png
+    - screenshots/mobile-2.png
 serviceworker:
   enabled: true
   install:
