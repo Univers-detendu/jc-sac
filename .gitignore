@@ -1,5 +1,7 @@
 .cecil/
 .cache/
 themes/
-vendor/
 _site
+vendor/
+node_modules/
+.DS_Store
