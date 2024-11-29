@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.language }}" class="scroll-smooth">
+<html lang="{{ site.language }}">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     {{- include('partials/metatags.html.twig') ~}}
@@ -8,15 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Gasoek+One&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
     {{- include('partials/fontawesome.twig') ~}}
     <style>{{ asset('css/styles.css')|inline }}</style>
+    <meta name="theme-color" content="#0081FF">
     <link rel="manifest" href="{{ url('manifest') }}">
   </head>
   <body class="flex flex-col min-h-screen font-sans antialiased bg-primary text-secondary">
     <header class="container mx-auto px-5 md:pl-8 md:pr-0 pt-5 pb-5 text-center">
       {%- block header ~%}
       <div class="flex flex-col">
-
-          <a href="{{ site.social.site.url }}">{{ asset('images/logo.svg')|html(attributes={alt: "Logo du site", class: 'inline w-36'}) }}</a>
-
+        <a href="{{ site.social.site.url }}">{{ asset('images/logo.svg')|html(attributes={alt: "Logo du site", class: 'inline w-36'}) }}</a>
       </div>
       {%- endblock header ~%}
     </header>
