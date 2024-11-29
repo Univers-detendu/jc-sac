@@ -1,12 +1,14 @@
 title: Sac infini
-baseline: Des objets, encore et encore
-baseurl:
+baseline: Des objets, encore et encore !
+baseurl: https://sac.jeanclaude-aventures.com/
 description: Le sac infini d'objets pour Jean Claude.
 author:
   name: Les éditions Univers Détendu
   url: https://www.linkedin.com/company/univers-detendu/
 image: images/open-graph.jpg
 social:
+  site:
+    url: https://jeanclaude-aventures.com
   facebook:
     url: https://www.facebook.com/jeanclaude.aventures
   instagram:
@@ -17,8 +19,6 @@ social:
     url: https://www.youtube.com/@jeanclaude.aventures
   twitch:
     url: https://www.twitch.tv/jeanclaudeaventures
-  ulule:
-    url: https://fr.ulule.com/les-aventures-de-jean-claude
 language: fr
 languages:
   - code: fr
@@ -30,7 +30,7 @@ theme:
 
 manifest:
   background_color: '#0081FF'
-  theme_color: '#1E0D56'
+  theme_color: '#0081FF'
 serviceworker:
   enabled: true
 
