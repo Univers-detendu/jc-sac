@@ -37,6 +37,8 @@ manifest:
       purpose: maskable
     - src: icon-256x256-maskable.png
       purpose: maskable
+  screenshots:
+    - screenshots/mobile.png
 serviceworker:
   enabled: true
   update:
