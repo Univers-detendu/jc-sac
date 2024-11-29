@@ -2,15 +2,15 @@
 
 {%- block main ~%}
       {#- description ~#}
-      <div class="p-8 rounded-3xl shadow-md mt-[-80px] bg-white">
-        <blockquote class="h-48">
-          <p id="description" class="text-2xl font-bold text-center">Cliquer sur le bouton pour prendre un objet</p>
+      <div id="description-container" class="p-8 rounded-3xl shadow-md bg-secondary text-white">
+        <blockquote class="h-96 flex items-center justify-center">
+          <div id="description" class="text-4xl font-bold text-center">Le sac à dos infini</div>
         </blockquote>
       </div>
       {#- button ~#}
-      <div class="flex mt-10 pb-10 text-wrap justify-center">
+      <div class="flex mt-5 text-wrap justify-center">
         {%- import 'macros/fontawesome.twig' as fontawesome ~%}
-        <button id="button" class="flex items-center justify-center px-10 py-4 rounded-full bg-secondary text-white no-underline transition hover:brightness-125 duration-300">
+        <button id="button" class="flex items-center justify-center px-10 py-5 rounded-full bg-secondary text-white no-underline transition hover:brightness-125 duration-300">
           <span>{{ fontawesome.icon('arrows-rotate', 'solid', 'xl') }}</span>
           &nbsp;&nbsp;&nbsp;&nbsp;
           <span>Fouiller le sac</span>
@@ -28,9 +28,12 @@
           console.log(random, items[random]);
           return items[random];
         }
-        const button = document.querySelector('#button');
+        const container = document.querySelector("#description-container");
         const description = document.querySelector('#description');
+        const button = document.querySelector('#button');
         button.addEventListener('click', (event) => {
+          container.classList.replace('bg-secondary', 'bg-white');
+          container.classList.replace('text-white', 'text-secondary');
           description.innerHTML = getRandomItem(items);
         });
       </script>
