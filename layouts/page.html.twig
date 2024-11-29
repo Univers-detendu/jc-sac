@@ -11,9 +11,9 @@
     <link rel="manifest" href="{{ url('manifest') }}">
   </head>
   <body class="flex flex-col min-h-screen font-sans antialiased bg-primary text-secondary">
-    <header class="container mx-auto px-4 md:pl-8 md:pr-0 pt-10 pb-20 text-center md:text-left">
+    <header class="container mx-auto px-4 md:pl-8 md:pr-0 pt-10 pb-20 text-center">
       {%- block header ~%}
-      <div class="flex flex-col md:flex-row space-x-4">
+      <div class="flex flex-col space-x-4">
         <div class="basis-1/2">
           <a href="{{ url(site.home) }}">{{ asset('images/logo.svg')|html(attributes={alt: "Logo du site", class: 'inline'}) }}</a>
         </div>
