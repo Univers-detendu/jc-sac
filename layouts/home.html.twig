@@ -15,7 +15,7 @@
       {#- button ~#}
       <div class="flex mt-4 text-wrap justify-center">
         {%- import 'macros/fontawesome.twig' as fontawesome ~%}
-        <button id="button" class="flex items-center space-x-4 justify-center px-14 py-5 rounded-full bg-secondary text-white no-underline transition hover:brightness-125 duration-300">
+        <button id="button" class="flex items-center space-x-4 justify-center px-14 py-5 rounded-full bg-secondary text-white no-underline duration-300 [transition-timing-function:cubic-bezier(0.175,0.885,0.32,1.275)] active:translate-y-1 active:scale-x-105 active:scale-y-95">
           <span>{{ fontawesome.icon(name:'arrows-rotate', style:'solid', size:'xl', flip:'horizontal') }}</span>
           <span>Fouiller le sac</span>
         </button>
