@@ -27,6 +27,10 @@ theme:
   - fontawesome
   - pwa
   - netlify
+
+manifest:
+  background_color: '#0081FF'
+  theme_color: '#1E0D56'
 serviceworker:
   enabled: true
 
