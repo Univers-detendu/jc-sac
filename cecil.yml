@@ -43,6 +43,8 @@ manifest:
 serviceworker:
   enabled: true
   install:
+    prompt: false
+    button: true
     precache:
       assets:
         - favicon.png
