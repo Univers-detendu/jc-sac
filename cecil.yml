@@ -63,14 +63,13 @@ serviceworker:
 assets:
   images:
     optimize:
-      enabled: true
+      enabled: false
     quality: 75
     responsive:
       widths: [480, 640, 768, 1024]
       sizes:
         default: '100vw'
-      enabled: true
-    formats: [webp]
+      enabled: false
 pages:
   default:
     sitemap:
@@ -80,17 +79,17 @@ pages:
   body:
     images:
       resize:
-        enabled: true
+        enabled: false
       responsive:
-        enabled: true
+        enabled: false
       caption:
-        enabled: true
-      formats: [webp]
+        enabled: false
+      #formats: [webp]
     links:
       embed:
-        enabled: true
+        enabled: false
       external:
-        blank: true
+        blank: false
 output:
   pagetypeformats:
     page: html
@@ -100,15 +99,15 @@ output:
     term: html
 metatags:
   jsonld:
-    enabled: true
+    enabled: false
 
-netlify:
-  redirects:
-    - from: https://jeanclaude-sac.netlify.app/*
-      to: https://jeanclaude.com/sac/:splat
-      status: 301
-      force: true
-    - from: https://jeanclaude.com/sac/*
-      to: https://sac.jeanclaude.com/:splat
-      status: 301
-      force: true
+#netlify:
+#  redirects:
+#    - from: https://jeanclaude-sac.netlify.app/*
+#      to: https://jeanclaude.com/sac/:splat
+#      status: 301
+#      force: true
+#    - from: https://jeanclaude.com/sac/*
+#      to: https://sac.jeanclaude.com/:splat
+#      status: 301
+#      force: true
