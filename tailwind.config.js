@@ -3,7 +3,7 @@ module.exports = {
     './layouts/**/*.html.twig',
   ],
   safelist: [
-    'text-neutral-400',
+    '-translate-y-3',
   ],
   theme: {
     fontFamily: {
