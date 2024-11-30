@@ -2,7 +2,7 @@
     "require": {
         "cecil/theme-fontawesome": "^1.3",
         "cecil/theme-netlify": "^2.1",
-        "cecil/theme-pwa": "^2.9"
+        "cecil/theme-pwa": "^2.10"
     },
     "config": {
         "allow-plugins": {
