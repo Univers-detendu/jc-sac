@@ -12,14 +12,14 @@
     <link rel="manifest" href="{{ url('manifest') }}">
   </head>
   <body class="flex flex-col min-h-screen font-sans antialiased bg-primary text-secondary">
-    <header class="max-w-md mx-auto px-5 md:pl-8 md:pr-0 pt-5 pb-5 text-center">
+    <header class="max-w-md mx-auto p-5 text-center">
       {%- block header ~%}
       <div class="flex flex-col">
         <a href="{{ site.social.site.url }}">{{ asset('images/logo.svg')|html(attributes={alt: "Logo du site", class: 'inline w-36'}) }}</a>
       </div>
       {%- endblock header ~%}
     </header>
-    <main class="max-w-md flex-grow mx-auto px-5 pb-2 md:px-8">
+    <main class="max-w-md flex-grow mx-auto px-5 pb-2">
       {%- block main ~%}
       <div class="p-8 rounded-3xl shadow-md mt-10 bg-white">
         {{ page.content }}
