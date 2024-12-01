@@ -32,24 +32,50 @@
         ];
       </script>
       <script>
-        function getRandomItem(items) {
-          const random = Math.floor(Math.random() * items.length);
-          console.log(random, items[random]);
-          return items[random];
-        }
         const container = document.querySelector("#description-container");
         const description = document.querySelector('#description');
         const sac = document.querySelector('#sac');
         const button = document.querySelector('#button');
-        button.addEventListener('click', (event) => {
+        // return random item
+        function getRandomItem(items) {
+          const random = Math.floor(Math.random() * items.length);
+          console.log(random, items[random]);
+          window.location.hash = random;
+          return items[random];
+        }
+        // update description with given item key otherwise random
+        function updateDescription(item = '') {
           container.classList.replace('bg-secondary', 'bg-white');
           container.classList.replace('text-white', 'text-secondary');
           sac.src="{{ asset('images/sac.svg') }}";
-          description.innerHTML = getRandomItem(items);
+          if (item in items) {
+            description.innerHTML = items[item];
+          } else {
+            description.innerHTML = getRandomItem(items);
+          }
           container.classList.add('-translate-y-3');
           setTimeout(function() {
             container.classList.remove('-translate-y-3');
           }, 500);
+        }
+        // update on button click
+        button.addEventListener('click', (event) => {
+          updateDescription();
+        });
+        // update on space keyboard press
+        document.addEventListener('keydown', (event) => {
+          if (event.key === ' ') {
+            event.preventDefault();
+            button.click();
+          }
+        });
+        // load item from location hash if exists
+        window.addEventListener('load', (event) => {
+          itemToLoad = window.location.hash.substring(1);
+          if (itemToLoad) {
+            console.log('Item to load:', itemToLoad);
+            updateDescription(Number(itemToLoad));
+          }
         });
       </script>
 {%- endblock ~%}
