@@ -893,6 +893,10 @@ main img {
   width: 9rem;
 }
 
+.max-w-md {
+  max-width: 28rem;
+}
+
 .flex-grow {
   flex-grow: 1;
 }
