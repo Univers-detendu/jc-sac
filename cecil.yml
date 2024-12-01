@@ -76,8 +76,6 @@ pages:
       published: false
     xsl/atom:
       published: false
-    404:
-      published: false
   body:
     images:
       resize:
