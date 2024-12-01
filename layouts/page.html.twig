@@ -20,6 +20,7 @@
       {%- endblock header ~%}
     </header>
     <main class="w-screen max-w-md flex-grow mx-auto px-5 pb-2">
+      {%- import 'macros/fontawesome.twig' as fontawesome ~%}
       {%- block main ~%}
       <div class="p-8 rounded-3xl shadow-md bg-white">
         {%- block content ~%}
@@ -27,6 +28,15 @@
         {%- endblock content ~%}
       </div>
       {%- endblock main ~%}
+      {#- install button ~#}
+      <div class="flex mt-4 items-center justify-center">
+        <button id="install-button" hidden>
+          <div class="flex space-x-2">
+            <span>{{ fontawesome.icon(name:'download', style:'solid') }}</span>
+            <span>Installer l’application</span>
+          </div>
+        </button>
+      </div>
     </main>
     {{- include('partials/regsw.js.twig', {site: site}, with_context = false) ~}}
   </body>
