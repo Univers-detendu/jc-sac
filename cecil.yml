@@ -105,10 +105,6 @@ metatags:
 #netlify:
 #  redirects:
 #    - from: https://jeanclaude-sac.netlify.app/*
-#      to: https://jeanclaude.com/sac/:splat
-#      status: 301
-#      force: true
-#    - from: https://jeanclaude.com/sac/*
 #      to: https://sac.jeanclaude.com/:splat
 #      status: 301
 #      force: true
