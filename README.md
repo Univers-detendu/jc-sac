@@ -9,9 +9,9 @@ PWA ([Progressive Web App](https://developer.mozilla.org/fr/docs/Web/Progressive
 
 ## Structure du projet
 
-- Paramétrage du site : `cecil.yml`
+- Paramétrage de l'app : `cecil.yml`
 - Liste des objets : `data/sac.csv`
-- Templates Twig : `layouts/`
+- Templates (Twig) : `layouts/`
 - Site généré : `_site`
 
 ## Aperçu local
