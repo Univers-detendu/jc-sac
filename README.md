@@ -1,4 +1,4 @@
-# Les aventures Jean Claude, le sac à dos infini
+# Les aventures de Jean Claude, le sac à dos infini
 
 PWA ([Progressive Web App](https://developer.mozilla.org/fr/docs/Web/Progressive_web_apps)) pour le jeu _Les aventures de Jean Claude_, générée par [Cecil](https://cecil.app).
 
