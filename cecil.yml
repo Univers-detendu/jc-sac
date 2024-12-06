@@ -102,7 +102,12 @@ metatags:
   jsonld:
     enabled: false
 
-#netlify:
+netlify:
+  redirects:
+    - from: https://jc-sac.netlify.app/*
+      to: https://jeanclaude-sac.netlify.app/:splat
+      status: 301
+      force: true
 #  redirects:
 #    - from: https://jeanclaude-sac.netlify.app/*
 #      to: https://sac.jeanclaude-aventures.com/:splat
