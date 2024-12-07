@@ -75,4 +75,15 @@
           }
         });
       </script>
+      <!-- Swipe with Hammer.js -->
+      <script src="{{ asset('scripts/hammer.js') }} "></script>
+      <script>
+        var card = document.getElementById('description-container');
+        var mc = new Hammer(card);
+        mc.get('swipe').set({direction: Hammer.DIRECTION_VERTICAL, threshold: 1, velocity: 0.1});
+        mc.on('swipeup', function(ev) {
+          console.log(ev.type, "gesture detected");
+          button.click();
+        });
+      </script>
 {%- endblock ~%}
