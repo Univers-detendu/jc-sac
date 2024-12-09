@@ -44,7 +44,7 @@
         function updateDescription(item = '') {
           container.classList.replace('bg-secondary', 'bg-white');
           container.classList.replace('text-white', 'text-secondary');
-          sac.src="{{ asset('images/sac.svg') }}";
+          sac.src = '{{ asset('images/sac.svg') }}';
           if (item in items) {
             description.innerHTML = items[item];
           } else {
@@ -54,6 +54,24 @@
           setTimeout(function() {
             container.classList.remove('-translate-y-3');
           }, 500);
+        }
+        // reset description
+        function resetDescription() {
+          container.classList.replace('bg-white', 'bg-secondary');
+          container.classList.replace('text-secondary', 'text-white');
+          sac.src = '{{ asset('images/sac-nuit.svg') }}';
+          description.innerHTML = 'Le sac à dos infini';
+        }
+        // load item from location hash if exists
+        function loadFromHash() {
+          itemToLoad = window.location.hash.substring(1);
+          if (itemToLoad) {
+            console.log('Item to load:', itemToLoad);
+            updateDescription(Number(itemToLoad));
+          } else {
+            console.log('Reset');
+            resetDescription();
+          }
         }
         // update on button click
         button.addEventListener('click', (event) => {
@@ -66,23 +84,19 @@
             button.click();
           }
         });
-        // load item from location hash if exists
+        // load hash if exists
         window.addEventListener('load', (event) => {
-          itemToLoad = window.location.hash.substring(1);
-          if (itemToLoad) {
-            console.log('Item to load:', itemToLoad);
-            updateDescription(Number(itemToLoad));
-          }
+          loadFromHash();
         });
-      </script>
-      <!-- Swipe with Hammer.js -->
-      <script src="{{ asset('scripts/hammer.js') }} "></script>
-      <script>
+        // load on hash change
+        window.addEventListener('hashchange', (event) => {
+          loadFromHash();
+        }, false);
+        // swipe with Hammer.js
         var card = document.getElementById('description-container');
         var mc = new Hammer(card);
         mc.get('swipe').set({direction: Hammer.DIRECTION_VERTICAL, threshold: 1, velocity: 0.1});
         mc.on('swipeup', function(ev) {
-          console.log(ev.type, "gesture detected");
           button.click();
         });
       </script>
