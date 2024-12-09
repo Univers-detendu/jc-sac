@@ -61,6 +61,10 @@
           container.classList.replace('text-secondary', 'text-white');
           sac.src = '{{ asset('images/sac-nuit.svg') }}';
           description.innerHTML = 'Le sac à dos infini';
+          container.classList.add('-translate-y-3');
+          setTimeout(function() {
+            container.classList.remove('-translate-y-3');
+          }, 500);
         }
         // load item from location hash if exists
         function loadFromHash() {
