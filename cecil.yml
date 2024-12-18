@@ -62,7 +62,7 @@ serviceworker:
       enabled: true
   offline:
     snackbar:
-      enabled: false
+      enabled: true
 
 pages:
   default:
