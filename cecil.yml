@@ -60,47 +60,20 @@ serviceworker:
   update:
     snackbar:
       enabled: true
+  offline:
+    snackbar:
+      enabled: false
 
-assets:
-  images:
-    optimize:
-      enabled: false
-    quality: 75
-    responsive:
-      widths: [480, 640, 768, 1024]
-      sizes:
-        default: '100vw'
-      enabled: false
 pages:
   default:
     sitemap:
       published: false
     xsl/atom:
       published: false
-  body:
-    images:
-      resize:
-        enabled: false
-      responsive:
-        enabled: false
-      caption:
-        enabled: false
-      #formats: [webp]
-    links:
-      embed:
-        enabled: false
-      external:
-        blank: false
 output:
   pagetypeformats:
     page: html
     homepage: html
-    section: html
-    vocabulary: html
-    term: html
-metatags:
-  jsonld:
-    enabled: false
 
 netlify:
   redirects:
