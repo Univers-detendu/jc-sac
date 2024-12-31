@@ -52,12 +52,6 @@ serviceworker:
     precache:
       assets:
         - favicon.png
-        - icon-192x192.png
-        - icon-256x256.png
-        - icon-512x512.png
-        - icon-192x192-maskable.png
-        - icon-256x256-maskable.png
-        - icon-512x512-maskable.png
         - images/logo.png
         - images/logo.svg
         - images/sac-nuit.svg
