@@ -10,6 +10,7 @@
     <style>{{ asset('css/styles.css')|inline }}</style>
     <meta name="theme-color" content="#0081FF">
     <link rel="manifest" href="{{ url('manifest') }}">
+    {{- include('partials/regsw.js.twig', {site}, with_context = false) ~}}
     <script src="{{ asset('scripts/hammer.js') }} "></script>
   </head>
   <body class="flex flex-col min-h-screen font-sans antialiased bg-primary text-secondary">
@@ -39,6 +40,5 @@
         </button>
       </div>
     </main>
-    {{- include('partials/regsw.js.twig', {site: site}, with_context = false) ~}}
   </body>
 </html>
