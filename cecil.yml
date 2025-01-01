@@ -48,7 +48,7 @@ serviceworker:
   enabled: true
   install:
     prompt: false
-    button: true
+    button: '#install-button'
     precache:
       assets:
         - favicon.png
