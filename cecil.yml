@@ -27,6 +27,17 @@ theme:
   - pwa
   - netlify
 
+pages:
+  default:
+    sitemap:
+      published: false
+    xsl/atom:
+      published: false
+output:
+  pagetypeformats:
+    page: html
+    homepage: html
+
 manifest:
   background_color: '#0081FF'
   theme_color: '#0081FF'
@@ -57,22 +68,9 @@ serviceworker:
         - images/sac-nuit.svg
         - images/sac.svg
   update:
-    snackbar:
-      enabled: true
+    snackbar: true
   offline:
-    snackbar:
-      enabled: true
-
-pages:
-  default:
-    sitemap:
-      published: false
-    xsl/atom:
-      published: false
-output:
-  pagetypeformats:
-    page: html
-    homepage: html
+    snackbar: true
 
 netlify:
   redirects:
