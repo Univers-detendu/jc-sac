@@ -15,7 +15,7 @@
     <header class="max-w-md mx-auto p-5 text-center">
       {%- block header ~%}
       <div class="flex flex-col">
-        <a href="{{ site.social.site.url }}">{{ asset('images/logo.svg')|html(attributes={alt: "Logo du site", class: 'inline w-36'}) }}</a>
+        <a href="{{ site.social.site.url }}">{{ html(asset('images/logo.svg'), attributes={alt: "Logo du site", class: 'inline w-36'}) }}</a>
       </div>
       {%- endblock header ~%}
     </header>
