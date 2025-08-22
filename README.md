@@ -45,5 +45,5 @@ Si l’un de ces fichiers est modifié, il est nécessaire de régénérer la fe
 
 ```bash
 npm install
-npx tailwindcss -i ./tailwind.css -o ./assets/css/styles.css
+npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/styles.css
 ```
