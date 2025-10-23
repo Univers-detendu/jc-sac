@@ -2,6 +2,11 @@
   "name": "jc-sac",
   "devDependencies": {
     "@tailwindcss/forms": "^0.5",
-    "tailwindcss": "^3.4"
+    "tailwindcss": "^4.1"
+  },
+  "scripts": {
+    "css:build": "npx @tailwindcss/cli -i ./assets/tailwind.css -o ./assets/styles.css",
+    "css:watch": "npx @tailwindcss/cli -i ./assets/tailwind.css -o ./assets/styles.css --watch",
+    "build": "curl -sSOL https://cecil.app/build.sh && bash ./build.sh"
   }
 }
