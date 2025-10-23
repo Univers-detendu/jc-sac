@@ -11,7 +11,7 @@ PWA ([Progressive Web App](https://developer.mozilla.org/fr/docs/Web/Progressive
 
 - Paramétrage de l'App : `cecil.yml`
 - Liste des objets : `data/sac.csv`
-- Templates (Twig) : `layouts/`
+- Templates ([Twig](https://twig.symfony.com)) : `layouts/`
 - Web App générée : `_site`
 
 ## Aperçu local
@@ -39,11 +39,10 @@ Puis copier le contenu du dossier `_site` sur le serveur web.
 Le fichier de styles `assets/styles.css` est généré par [Tailwind CSS](https://tailwindcss.com), à partir des fichiers suivants :
 
 1. `tailwind.config.js`
-2. `tailwind.css`
+2. `assets/tailwind.css`
 
 Si l’un de ces fichiers est modifié, il est nécessaire de régénérer la feuille de styles :
 
 ```bash
-npm install
-npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/styles.css
+npx run css:build
 ```
