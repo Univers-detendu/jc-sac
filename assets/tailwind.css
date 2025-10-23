@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+@config '../tailwind.config.js';
+
+@layer base {
+  html {
+    font-family: "Unbounded", system-ui, sans-serif;
+    @apply font-light;
+  }
+  h1, h2, h3 {
+    font-family: "Gasoek One", system-ui, sans-serif;
+    @apply tracking-wide uppercase mb-2;
+  }
+  h2 {
+    @apply text-3xl ;
+  }
+  h3 {
+    @apply text-xl;
+  }
+  p {
+    @apply my-4 text-base font-normal;
+  }
+  a {
+    @apply underline;
+  }
+  main img {
+    @apply mx-auto;
+  }
+}
