@@ -1,0 +1,37 @@
+@import 'tailwindcss';
+@source './layouts/**/*.html.twig';
+@source inline('-translate-y-3');
+
+@theme {
+  --font-sans: "Unbounded", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --color-primary: #0081FF;
+  --color-secondary: #1E0D56;
+}
+
+@layer base {
+  html {
+    @apply font-light;
+  }
+  h1, h2, h3 {
+    font-family: "Gasoek One", system-ui, sans-serif;
+    @apply tracking-wide uppercase mb-2;
+  }
+  h1, h2 {
+    @apply text-2xl md:text-3xl;
+  }
+  h3 {
+    @apply text-xl;
+  }
+  p {
+    @apply my-4 text-base font-normal;
+  }
+  a {
+    @apply underline;
+  }
+  blockquote {
+    @apply text-neutral-400;
+  }
+  main img {
+    @apply mx-auto;
+  }
+}
