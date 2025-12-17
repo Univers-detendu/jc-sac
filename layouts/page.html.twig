@@ -2,11 +2,12 @@
 <!DOCTYPE html>
 <html lang="{{ site.language }}">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {{- include('partials/metatags.html.twig') ~}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gasoek+One&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Gasoek+One&family=Unbounded:wght@200..900&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gasoek+One&family=Unbounded:wght@200..900&display=swap">
     {{- include('partials/fontawesome.twig', {styles: ['solid']}) ~}}
     <style>{{ asset('styles.css')|inline }}</style>
     {{- include('partials/pwa.html.twig', {site}, with_context = false) ~}}
@@ -16,7 +17,7 @@
     <header class="max-w-md mx-auto p-5 text-center">
       {%- block header ~%}
       <div class="flex flex-col">
-        <a href="{{ site.social.site.url }}">{{ html(asset('images/logo.svg'), attributes={alt: "Logo du site", class: 'inline w-36'}) }}</a>
+        <a href="{{ site.social.site.url }}">{{ html(asset('images/logo.svg'), attributes={alt: "Logo", class: 'inline w-36'}) }}</a>
       </div>
       {%- endblock header ~%}
     </header>
@@ -32,7 +33,7 @@
       <div class="flex items-center justify-center">
         <button id="install-button" class="cursor-pointer" hidden>
           <div class="mt-5 px-5 py-2 flex space-x-2 rounded-full bg-[#CEC9C5] text-secondary brightness-90">
-            <span>{{ fontawesome.icon(name:'download', style:'solid') }}</span>
+            <span>{{ fontawesome.icon(name: 'download', style: 'solid') }}</span>
             <span>Installer l’application</span>
           </div>
         </button>
