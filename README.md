@@ -33,16 +33,3 @@ php cecil.phar build
 ```
 
 Puis copier le contenu du dossier `_site` sur le serveur web.
-
-## (re)Génération de la feuille de styles
-
-Le fichier de styles `assets/styles.css` est généré par [Tailwind CSS](https://tailwindcss.com), à partir des fichiers suivants :
-
-1. `tailwind.config.js`
-2. `assets/tailwind.css`
-
-Si l’un de ces fichiers est modifié, il est nécessaire de régénérer la feuille de styles :
-
-```bash
-npx run css:build
-```
