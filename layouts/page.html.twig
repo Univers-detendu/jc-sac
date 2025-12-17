@@ -1,3 +1,4 @@
+{%- import 'macros/fontawesome.twig' as fontawesome -%}
 <!DOCTYPE html>
 <html lang="{{ site.language }}">
   <head>
@@ -6,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gasoek+One&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
-    {{- include('partials/fontawesome.twig') ~}}
+    {{- include('partials/fontawesome.twig', {styles: ['solid']}) ~}}
     <style>{{ asset('styles.css')|inline }}</style>
     {{- include('partials/pwa.html.twig', {site}, with_context = false) ~}}
     <script src="{{ asset('scripts/hammer.js') }} "></script>
@@ -20,7 +21,6 @@
       {%- endblock header ~%}
     </header>
     <main class="w-screen max-w-md grow mx-auto px-5 pb-5">
-      {%- import 'macros/fontawesome.twig' as fontawesome ~%}
       {%- block main ~%}
       <div class="p-8 rounded-3xl shadow-md bg-white">
         {%- block content ~%}

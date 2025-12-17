@@ -1,7 +1,7 @@
-{% extends "page.html.twig" %}
+{% import 'macros/fontawesome.twig' as fontawesome %}
+{% extends 'page.html.twig' %}
 
 {%- block main ~%}
-      {%- import 'macros/fontawesome.twig' as fontawesome ~%}
       {#- card ~#}
       <div id="card" class="px-6 py-10 pb-8 rounded-3xl shadow-md bg-secondary text-white cursor-grab transition ease-out">
         <blockquote class="h-96 flex flex-col items-center justify-center space-y-4">
@@ -16,8 +16,8 @@
       <div class="p-4 rounded-b-xl shadow-md bg-[#9F9187] relative -z-20 mx-9 -mt-5"></div>
       {#- main button ~#}
       <div class="flex mt-4 text-wrap justify-center">
-          <span>{{ fontawesome.icon(name:'arrows-rotate', style:'solid', size:'xl', flip:'horizontal') }}</span>
         <button id="button" class="flex items-center space-x-4 justify-center px-14 py-5 rounded-full bg-secondary text-white no-underline cursor-pointer duration-300 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] active:translate-y-1 active:scale-x-105 active:scale-y-95">
+          <span>{{ fontawesome.icon(name: 'arrows-rotate', style: 'solid', size: 'xl', flip: 'horizontal') }}</span>
           <span>Fouiller le sac</span>
         </button>
       </div>
