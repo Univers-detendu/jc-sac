@@ -1,4 +1,4 @@
-title: Sac à dos
+title: Sac à dos infini
 baseurl: https://jeanclaude-sac.netlify.app/
 description: Le sac à dos infini de Jean Claude.
 author:
@@ -29,6 +29,7 @@ output:
     homepage: html
 
 manifest:
+  short_name: Sac à dos
   background_color: '#0081FF'
   theme_color: '#0081FF'
   screenshots:
