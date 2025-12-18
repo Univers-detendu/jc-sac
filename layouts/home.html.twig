@@ -4,15 +4,17 @@
 {%- block main ~%}
       {#- card ~#}
       <div id="card" class="px-6 py-10 pb-8 rounded-3xl shadow-md bg-secondary text-white cursor-grab transition ease-out">
-        <blockquote class="h-96 flex flex-col items-center justify-center space-y-4">
+        <div class="h-96 flex flex-col items-center justify-center space-y-4 text-inherit">
           <div class="grow"></div>
           {#- card description ~#}
           <div id="description" class="text-3xl font-bold text-center">Le sac à dos infini</div>
           <div class="grow"></div>
           <img id="image-sac" src="{{ asset('images/sac-nuit.svg') }}" alt="Sac à dos">
-        </blockquote>
+        </div>
       </div>
-      <div class="p-4 rounded-b-2xl shadow-md bg-[#CEC9C5] relative -z-10 mx-5 -mt-5 h-8"></div>
+      <div class="flex justify-center items-end p-4 rounded-b-2xl shadow-md bg-[#CEC9C5] relative -z-10 mx-5 -mt-17 h-20">
+        <img src="{{ asset('images/sac.svg') }}" alt="Sac à dos">
+      </div>
       <div class="p-4 rounded-b-xl shadow-md bg-[#9F9187] relative -z-20 mx-9 -mt-5"></div>
       {#- main button ~#}
       <div class="flex mt-4 text-wrap justify-center">
@@ -31,10 +33,17 @@
       </script>
       {#- scripts ~#}
       <script>{% apply minify_js ~%}
+        // selectors
         const card = document.querySelector('#card');
         const description = document.querySelector('#description');
         const sacImage = document.querySelector('#image-sac');
         const button = document.querySelector('#button');
+        // on page load
+        window.addEventListener('load', (event) => {
+          bumpCard();
+        });
+        // Hammer.js manager
+        const mc = new Hammer(card);
         // return random item
         function getRandomItem(items) {
           const random = Math.floor(Math.random() * items.length);
@@ -42,7 +51,7 @@
           window.location.hash = random;
           return items[random];
         }
-        // update card with given item key otherwise random
+        // update card with the given item key, otherwise random
         function updateCard(item = '') {
           card.classList.replace('bg-secondary', 'bg-white');
           card.classList.replace('text-white', 'text-secondary');
@@ -52,10 +61,13 @@
           } else {
             description.innerHTML = getRandomItem(items);
           }
-          card.classList.add('-translate-y-3');
+        }
+        // bump card animation
+        function bumpCard() {
+          card.style.transform = 'translate(0, -15px)';
           setTimeout(function() {
-            card.classList.remove('-translate-y-3');
-          }, 500);
+            card.style.transform = 'translate(0, 0px)';
+          }, 200);
         }
         // reset card
         function resetCard() {
@@ -63,10 +75,7 @@
           card.classList.replace('text-secondary', 'text-white');
           sacImage.src = '{{ asset('images/sac-nuit.svg') }}';
           description.innerHTML = 'Le sac à dos infini';
-          card.classList.add('-translate-y-3');
-          setTimeout(function() {
-            card.classList.remove('-translate-y-3');
-          }, 500);
+          card.style.transform = 'translate(0, 0px)';
         }
         // load item from location hash if exists
         function loadFromHash() {
@@ -81,7 +90,9 @@
         }
         // update on button click
         button.addEventListener('click', (event) => {
+          mc.stop();
           updateCard();
+          bumpCard();
         });
         // simulate click on space keyboard press
         document.addEventListener('keydown', (event) => {
@@ -98,11 +109,17 @@
         window.addEventListener('hashchange', (event) => {
           loadFromHash();
         }, false);
-        // swipe with Hammer.js
-        const mc = new Hammer(card);
-        mc.get('swipe').set({direction: Hammer.DIRECTION_VERTICAL, threshold: 1, velocity: 0.1});
-        mc.on('swipeup', function(ev) {
-          button.click();
+        // pan up
+        mc.get('pan').set({direction: Hammer.DIRECTION_VERTICAL});
+        mc.on('pan', function(ev) {
+          card.style.transform = 'translate(0, ' + (ev.deltaY / 10) + 'px)';
+        });
+        // pan end
+        mc.on('panend', function(ev) {
+          card.style.transform = 'translate(0, 0px)';
+          if (ev.deltaY < -100) {
+            updateCard();
+          }
         });
       {% endapply %}</script>
 {%- endblock ~%}

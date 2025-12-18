@@ -11,9 +11,9 @@
     {{- include('partials/fontawesome.twig', {styles: ['solid']}) ~}}
     <style>{{ asset('styles.css')|inline }}</style>
     {{- include('partials/pwa.html.twig', {site}, with_context = false) ~}}
-    <script src="{{ asset('scripts/hammer.js') }} "></script>
+    <script src="{{ asset('scripts/hammer.js') }}"></script>
   </head>
-  <body class="flex flex-col min-h-screen font-sans antialiased bg-primary text-secondary">
+  <body class="flex flex-col font-sans antialiased bg-primary text-secondary">
     <header class="max-w-md mx-auto p-5 text-center">
       {%- block header ~%}
       <div class="flex flex-col">
