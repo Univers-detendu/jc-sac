@@ -38,10 +38,8 @@
         const description = document.querySelector('#description');
         const sacImage = document.querySelector('#image-sac');
         const button = document.querySelector('#button');
-        // on page load
-        window.addEventListener('load', (event) => {
-          bumpCard();
-        });
+        // bump a first time
+        bumpCard();
         // Hammer.js manager
         const mc = new Hammer(card);
         // return random item
@@ -67,7 +65,7 @@
           card.style.transform = 'translate(0, -15px)';
           setTimeout(function() {
             card.style.transform = 'translate(0, 0px)';
-          }, 200);
+          }, 500);
         }
         // reset card
         function resetCard() {
@@ -91,8 +89,8 @@
         // update on button click
         button.addEventListener('click', (event) => {
           mc.stop();
-          updateCard();
           bumpCard();
+          updateCard();
         });
         // simulate click on space keyboard press
         document.addEventListener('keydown', (event) => {
