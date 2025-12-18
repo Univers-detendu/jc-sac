@@ -11,7 +11,6 @@
     {{- include('partials/fontawesome.twig', {styles: ['solid']}) ~}}
     <style>{{ asset('styles.css')|inline }}</style>
     {{- include('partials/pwa.html.twig', {site}, with_context = false) ~}}
-    <script src="{{ asset('scripts/hammer.js') }}"></script>
   </head>
   <body class="flex flex-col font-sans antialiased bg-primary text-secondary">
     <header class="max-w-md mx-auto p-5 text-center">
@@ -30,14 +29,15 @@
       </div>
       {%- endblock main ~%}
       {#- install button ~#}
-      <div class="flex items-center justify-center">
+      <div class="flex mt-4 items-center justify-center">
         <button id="install-button" class="cursor-pointer" hidden>
-          <div class="mt-5 px-5 py-2 flex space-x-2 rounded-full bg-[#CEC9C5] text-secondary brightness-90">
+          <div class="px-5 py-2 flex space-x-2 rounded-full bg-[#CEC9C5] text-secondary brightness-90">
             <span>{{ fontawesome.icon(name: 'download', style: 'solid') }}</span>
             <span>Installer l’application</span>
           </div>
         </button>
       </div>
     </main>
+    {%- block scripts %}{% endblock ~%}
   </body>
 </html>
