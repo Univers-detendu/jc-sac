@@ -1,6 +1,5 @@
 @import 'tailwindcss';
 @source './layouts/**/*.html.twig';
-@source inline('-translate-y-3');
 
 @theme {
   --font-sans: "Unbounded", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";

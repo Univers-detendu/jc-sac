@@ -17,7 +17,7 @@
     <header class="max-w-md mx-auto p-5 text-center">
       {%- block header ~%}
       <div class="flex flex-col">
-        <a href="{{ url(site.website) }}">{{ html(asset('images/logo.svg'), attributes={alt: "Logo", class: 'inline w-36'}) }}</a>
+        <a href="{{ url(site.website) }}">{{ html(asset('images/logo.svg'), attributes={alt: "Logo", class: 'inline w-30 md:w-36'}) }}</a>
       </div>
       {%- endblock header ~%}
     </header>
