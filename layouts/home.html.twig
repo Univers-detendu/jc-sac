@@ -41,8 +41,7 @@
       const description = document.querySelector('#description');
       const sacImage = document.querySelector('#image-sac');
       const button = document.querySelector('#button');
-      // bump a first time
-      bumpCard();
+
       // Hammer.js manager
       const mc = new Hammer(card);
       // return random item
@@ -69,6 +68,7 @@
         setTimeout(function() {
           card.style.transform = 'translate(0, 0px)';
         }, 500);
+        console.log('Card bumped');
       }
       // reset card
       function resetCard() {
@@ -104,10 +104,12 @@
       });
       // load if hash already exists
       window.addEventListener('load', (event) => {
+        bumpCard();
         loadFromHash();
       });
       // load on hash change
       window.addEventListener('hashchange', (event) => {
+        bumpCard();
         loadFromHash();
       }, false);
       // pan up
@@ -118,8 +120,12 @@
       // pan end
       mc.on('panend', function(ev) {
         card.style.transform = 'translate(0, 0px)';
+        console.log('deltaY:', ev.deltaY);
+        // update on significant pan up, go back on significant pan down
         if (ev.deltaY < -100) {
           updateCard();
+        } else if (ev.deltaY > 100) {
+          history.back();
         }
       });
     {% endapply %}</script>

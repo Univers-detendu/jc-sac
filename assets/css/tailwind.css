@@ -11,6 +11,9 @@
   html {
     @apply font-light;
   }
+  body {
+    @apply overscroll-y-contain;
+  }
   h1, h2, h3 {
     font-family: "Gasoek One", system-ui, sans-serif;
     @apply tracking-wide uppercase mb-2;
