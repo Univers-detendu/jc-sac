@@ -12,15 +12,13 @@
     <style>{{ asset('styles.css')|inline }}</style>
     {{- include('partials/pwa.html.twig', {site}, with_context = false) ~}}
   </head>
-  <body class="flex flex-col font-sans antialiased bg-primary text-secondary">
-    <header class="max-w-md mx-auto p-5 text-center">
+  <body class="flex flex-col h-screen font-sans antialiased bg-primary text-secondary">
+    <header class="mx-auto p-5">
       {%- block header ~%}
-      <div class="flex flex-col">
-        <a href="{{ url(site.website) }}">{{ html(asset('images/logo.svg'), attributes={alt: "Logo", class: 'inline w-36'}) }}</a>
-      </div>
+      <a href="{{ url(site.website) }}">{{ html(asset('images/logo.svg'), attributes={alt: "Logo", class: 'size-full max-w-36'}) }}</a>
       {%- endblock header ~%}
     </header>
-    <main class="w-screen max-w-md grow mx-auto px-5 pb-5">
+    <main class="flex flex-col w-screen h-full max-w-md mx-auto px-5 pb-5">
       {%- block main ~%}
       <div class="p-8 rounded-3xl shadow-md bg-white">
         {%- block content ~%}
@@ -29,12 +27,9 @@
       </div>
       {%- endblock main ~%}
       {#- install button ~#}
-      <div class="flex mt-4 items-center justify-center">
-        <button id="install-button" class="cursor-pointer" hidden>
-          <div class="px-5 py-2 flex space-x-2 rounded-full bg-[#CEC9C5] text-secondary brightness-90">
-            <span>{{ fontawesome.icon(name: 'download', style: 'solid') }}</span>
-            <span>Installer l’application</span>
-          </div>
+      <div class="fixed bottom-5 right-5 bg-primary rounded-full px-3 py-2 shadow-md">
+        <button id="install-button" title="Installer l’application" aria-label="Installer l’application" class="cursor-pointer text-secondary brightness-90" hidden>
+            {{ fontawesome.icon(name: 'download', style: 'solid', size: 'lg') }}
         </button>
       </div>
     </main>
