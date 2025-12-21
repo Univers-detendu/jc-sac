@@ -36,15 +36,14 @@
     {%- block scripts ~%}
     <script src="{{ asset('scripts/hammer.js') }}"></script>
     <script>{% apply minify_js ~%}
-      // selectors
+      // CSS selectors
       const card = document.querySelector('#card');
       const description = document.querySelector('#description');
       const sacImage = document.querySelector('#image-sac');
       const button = document.querySelector('#button');
-
       // Hammer.js manager
       const mc = new Hammer(card);
-      // return random item
+      // return a random item
       function getRandomItem(items) {
         const random = Math.floor(Math.random() * items.length);
         console.log(random, items[random]);
@@ -104,12 +103,10 @@
       });
       // load if hash already exists
       window.addEventListener('load', (event) => {
-        bumpCard();
         loadFromHash();
       });
       // load on hash change
       window.addEventListener('hashchange', (event) => {
-        bumpCard();
         loadFromHash();
       }, false);
       // pan up
