@@ -1,4 +1,3 @@
-{%- import 'macros/fontawesome.twig' as fontawesome -%}
 <!DOCTYPE html>
 <html lang="{{ site.language }}">
   <head>
@@ -8,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Gasoek+One&family=Unbounded:wght@200..900&display=swap" as="style">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gasoek+One&family=Unbounded:wght@200..900&display=swap">
-    {{- include('partials/fontawesome.twig', {styles: ['solid']}) ~}}
     <style>{{ asset('styles.css')|inline }}</style>
     {{- include('partials/pwa.html.twig', {site}, with_context = false) ~}}
   </head>
@@ -26,10 +24,6 @@
         {%- endblock content ~%}
       </div>
       {%- endblock main ~%}
-      {#- install button ~#}
-      <button id="install-button" title="Installer l’application" aria-label="Installer l’application" class="fixed top-5 right-5 cursor-pointer bg-primary rounded-full px-3 py-2 shadow-md text-secondary brightness-90" hidden>
-        {{ fontawesome.icon(name: 'download', style: 'solid', size: 'lg') }}
-      </button>
     </main>
     {%- block scripts %}{% endblock ~%}
   </body>

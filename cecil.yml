@@ -13,7 +13,6 @@ languages:
     locale: fr_FR
 
 theme:
-  - fontawesome
   - pwa
   - netlify
 
