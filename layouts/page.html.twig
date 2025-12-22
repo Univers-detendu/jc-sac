@@ -27,11 +27,9 @@
       </div>
       {%- endblock main ~%}
       {#- install button ~#}
-      <div class="fixed bottom-5 right-5 bg-primary rounded-full px-3 py-2 shadow-md">
-        <button id="install-button" title="Installer l’application" aria-label="Installer l’application" class="cursor-pointer text-secondary brightness-90" hidden>
-            {{ fontawesome.icon(name: 'download', style: 'solid', size: 'lg') }}
-        </button>
-      </div>
+      <button id="install-button" title="Installer l’application" aria-label="Installer l’application" class="fixed top-5 right-5 cursor-pointer bg-primary rounded-full px-3 py-2 shadow-md text-secondary brightness-90" hidden>
+        {{ fontawesome.icon(name: 'download', style: 'solid', size: 'lg') }}
+      </button>
     </main>
     {%- block scripts %}{% endblock ~%}
   </body>
